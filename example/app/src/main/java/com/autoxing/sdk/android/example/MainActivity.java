@@ -2,6 +2,7 @@ package com.autoxing.sdk.android.example;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
 
     private TextView text_result;
     private TextView text_state;
+
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,19 +83,28 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
                     boolean isOk = mAXRobot.connectRobot(info);
                     Log.e(TAG, "isOk="+isOk);
                     if (isOk) {
-                        text_result.setText("Connection succeeded. RobotId: " + mAXRobot.getRobotId());
+                        setResultText("Connection succeeded. RobotId: " + mAXRobot.getRobotId());
                     }
                 } catch (AXInitException e) {
                     Log.e(TAG, "code="+e.getCode()+",message="+e.getMessage());
-                    text_result.setText(e.getMessage());
+                    setResultText(e.getMessage());
                 } catch (AXConnectException e) {
                     Log.e(TAG, "code="+e.getCode()+",message="+e.getMessage());
-                    text_result.setText(e.getMessage());
+                    setResultText(e.getMessage());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void setResultText(final String text) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                text_result.setText(text);
+            }
+        });
     }
 
     @Override

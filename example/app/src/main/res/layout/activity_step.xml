@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_Forward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="前进" />
+
+    <Button
+        android:id="@+id/btn_Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="后退" />
+
+    <Button
+        android:id="@+id/btn_TurnLeft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="左转" />
+
+    <Button
+        android:id="@+id/btn_TurnRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="右转" />
+
+    <Button
+        android:id="@+id/btn_Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止" />
+</LinearLayout>

@@ -1,0 +1,17 @@
+
+osquid:S1450"ZRemove the "text_result" field and declare it as a local variable in the relevant methods.(­İÄê
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ßÂ„
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëì½
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€»¹©
+[squid:UselessImportCheck"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ8Ö‡£¶0
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇµÔóûÿÿÿÿ
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äã¼µøÿÿÿÿ8æŞ¥£¶0
+msquid:UselessImportCheck"DRemove this unused import 'com.autoxing.robot.sdk.model.LightColor'.(®Ÿƒı8Ö‡£¶0
+lsquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­İÄê
+Dsquid:S1068"/Remove this unused "text_result" private field.(­İÄê
+lsquid:UselessImportCheck"CRemove this unused import 'com.autoxing.robot.sdk.model.LightBelt'.(İÙòû8Ö‡£¶0
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Âä¹
+msquid:UselessImportCheck"DRemove this unused import 'com.autoxing.robot.sdk.model.LightIndex'.(ÚÑÂì8Ö‡£¶0
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÒŒäüÿÿÿÿ
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Õ’§
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¾Ğ­8Ëœ§£¶0

@@ -1,0 +1,11 @@
+
+Zsquid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8â¹³¤¶0
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æÁš˜şÿÿÿÿ8œ·²¤¶0
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Öø‹¯8œ·²¤¶0
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Öø‹¯8œ·²¤¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âóÊà8œ·²¤¶0
+ssquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­İÄê8œ·²¤¶0
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8œ·²¤¶0
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(şÒµúøÿÿÿÿ8œ·²¤¶0
+`squid:S2147"DCombine this catch with the one at line 74, which has the same body.(‹°„ù8œ·²¤¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚÁ§8œ·²¤¶0

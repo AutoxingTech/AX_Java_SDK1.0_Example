@@ -1,0 +1,13 @@
+
+†squid:UselessImportCheck"XRemove this unused import 'com.autoxing.sdk.android.example.hardware.LightbeltActivity'.(»Êù¸üÿÿÿÿ8æÄ¹§¶0
+zsquid:UselessImportCheck"LRemove this unused import 'com.autoxing.robot.sdk.error.AXConnectException'.(ÊêØ¨øÿÿÿÿ8æÄ¹§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù×—·8æÄ¹§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€®Ë‡8æÄ¹§¶0
+wsquid:UselessImportCheck"IRemove this unused import 'com.autoxing.robot.sdk.error.AXInitException'.(µßÎ¸þÿÿÿÿ8æÄ¹§¶0
+ssquid:UselessImportCheck"ERemove this unused import 'com.autoxing.robot.sdk.model.ConnectInfo'.(¡™ÜÒùÿÿÿÿ8æÄ¹§¶0
+ssquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ÝÄê8æÄ¹§¶0
+{squid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰8æÄ¹§¶0
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ÈÈ£žüÿÿÿÿ8æÄ¹§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ä‰×8æÄ¹§¶0
+rsquid:UselessImportCheck"DRemove this unused import 'com.autoxing.robot.sdk.model.MotionType'.(·¯Ì®ûÿÿÿÿ8æÄ¹§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŒÔ™8æÄ¹§¶0

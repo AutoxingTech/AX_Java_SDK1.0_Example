@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_motionmode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="运动模式" />
+
+    <Button
+        android:id="@+id/btn_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="单步运动" />
+
+    <Button
+        android:id="@+id/btn_mapto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="位置定点运动" />
+
+    <Button
+        android:id="@+id/btn_poito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="站点定点运动" />
+</LinearLayout>

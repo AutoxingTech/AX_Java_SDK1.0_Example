@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="x：" />
+        <EditText
+            android:id="@+id/et_x"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="-0.1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="y：" />
+        <EditText
+            android:id="@+id/et_y"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="0.53"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="yaw：" />
+        <EditText
+            android:id="@+id/et_yaw"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="0"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请确保输入的位置，机器人能正常到达" />
+
+    <Button
+        android:id="@+id/btn_goto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="前往该位置" />
+</LinearLayout>

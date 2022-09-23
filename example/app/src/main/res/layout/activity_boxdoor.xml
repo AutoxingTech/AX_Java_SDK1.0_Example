@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="开箱控制" />
+
+    <Button
+        android:id="@+id/btn_openbox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开1号门" />
+
+    <Button
+        android:id="@+id/btn_openbox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开2号门" />
+
+    <Button
+        android:id="@+id/btn_openbox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开3号门" />
+
+    <Button
+        android:id="@+id/btn_openbox4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开4号门" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="关箱控制" />
+
+    <Button
+        android:id="@+id/btn_closebox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭1号门" />
+
+    <Button
+        android:id="@+id/btn_closebox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭2号门" />
+
+    <Button
+        android:id="@+id/btn_closebox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭3号门" />
+
+    <Button
+        android:id="@+id/btn_closebox4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭4号门" />
+</LinearLayout>

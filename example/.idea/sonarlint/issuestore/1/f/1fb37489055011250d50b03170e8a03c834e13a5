@@ -1,0 +1,8 @@
+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ëß¦¾8ìƒ“Ÿ¶0
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Æ³†œúÿÿÿÿ8ìƒ“Ÿ¶0
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Ëß¦¾8ìƒ“Ÿ¶0
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Æ³†œúÿÿÿÿ8ìƒ“Ÿ¶0
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ãÃ¹Êùÿÿÿÿ8Î„Ÿ¶0
+[squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÅšêŸ¶0
+Hsquid:S1068"'Remove this unused "TAG" private field.(ãÃ¹Êùÿÿÿÿ8ÅšêŸ¶0

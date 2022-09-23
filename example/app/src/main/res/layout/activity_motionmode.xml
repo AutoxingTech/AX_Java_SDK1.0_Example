@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动模式" />
+
+    <Button
+        android:id="@+id/btn_manual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手动模式" />
+
+    <Button
+        android:id="@+id/btn_emergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="急停模式" />
+
+    <Button
+        android:id="@+id/btn_cancel_emergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消急停" />
+</LinearLayout>

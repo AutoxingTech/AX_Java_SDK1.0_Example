@@ -1,0 +1,10 @@
+
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ıˆ¦”úÿÿÿÿ8–ù§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÜúŸ8–ù§¶0
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(…¹İ¬8–ù§¶0
+Ysquid:S2387"8"mHandler" is the name of a field in "FragmentActivity".(×»ëØşÿÿÿÿ8–ù§¶0
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üû8–ù§¶0
+csquid:UselessImportCheck"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8–ù§¶0
+ssquid:UselessImportCheck"JRemove this unused import 'com.autoxing.sdk.android.example.MainActivity'.(ó‚Éï8–ù§¶0
+]squid:UselessImportCheck"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8–ù§¶0
+`squid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(²òıÿÿÿÿ8–ù§¶0

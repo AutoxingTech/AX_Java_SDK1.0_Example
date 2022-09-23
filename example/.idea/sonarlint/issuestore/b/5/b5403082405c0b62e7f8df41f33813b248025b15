@@ -1,0 +1,10 @@
+
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úÙÈÙ
+Dsquid:S1068"/Remove this unused "text_result" private field.(­ÝÄê
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë–ç÷
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Ó¼•üÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËØ¨¤ùÿÿÿÿ
+osquid:S1450"ZRemove the "text_result" field and declare it as a local variable in the relevant methods.(­ÝÄê
+lsquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ÝÄê
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔŽö¾üÿÿÿÿ
+gsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(•ôíP

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_opensprayer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1档喷雾" />
+
+    <Button
+        android:id="@+id/btn_opensprayer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2档喷雾" />
+
+    <Button
+        android:id="@+id/btn_opensprayer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3档喷雾" />
+
+    <Button
+        android:id="@+id/btn_opensprayer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4档喷雾" />
+
+    <Button
+        android:id="@+id/btn_opensprayer5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5档喷雾" />
+
+    <Button
+        android:id="@+id/btn_closesprayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭喷雾" />
+</LinearLayout>

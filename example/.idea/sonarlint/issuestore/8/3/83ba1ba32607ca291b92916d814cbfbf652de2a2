@@ -1,0 +1,22 @@
+
+osquid:S1450"ZRemove the "text_result" field and declare it as a local variable in the relevant methods.(­İÄê
+Nsquid:S1199"-Extract this nested code block into a method.(ğÁ–Óûÿÿÿÿ8ƒ¾ä¢¶0
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø·õëùÿÿÿÿ8äŸê¢¶0
+lsquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­İÄê
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÔ§À8½Şø¢¶0
+U"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ÁÅ®8Êåò¢¶0
+U"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ÁÅ®8ƒ¾ä¢¶0
+rsquid:UselessImportCheck"DRemove this unused import 'com.autoxing.robot.sdk.model.MotionType'.(·¯Ì®ûÿÿÿÿ8“©ç¢¶0
+Dsquid:S1068"/Remove this unused "text_result" private field.(­İÄê
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒº ›ùÿÿÿÿ8ù¥è¢¶0
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(†¬Ğ
+fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—úİx
+Nsquid:S1199"-Extract this nested code block into a method.(·ÿ½äûÿÿÿÿ8ƒ¾ä¢¶0
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ÉÍ‘
+†squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Î¹ºÒşÿÿÿÿ8ƒ¾ä¢¶0
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶úÉûÿÿÿÿ8ïıö¢¶0
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Æº­ùÿÿÿÿ8ªÅù¢¶0
+Nsquid:S1199"-Extract this nested code block into a method.(úÀôãùÿÿÿÿ8ƒ¾ä¢¶0
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Î¹ºÒşÿÿÿÿ8ƒ¾ä¢¶0
+fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£²¯T
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘µœ¬8´ì÷¢¶0

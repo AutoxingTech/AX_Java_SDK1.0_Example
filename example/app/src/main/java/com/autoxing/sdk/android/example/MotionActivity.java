@@ -16,6 +16,7 @@ import com.autoxing.robot.sdk.model.ConnectInfo;
 import com.autoxing.robot.sdk.model.MotionType;
 import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.sdk.android.example.hardware.LightbeltActivity;
+import com.autoxing.sdk.android.example.motion.GoHomeActivity;
 import com.autoxing.sdk.android.example.motion.MaptoActivity;
 import com.autoxing.sdk.android.example.motion.MotionModeActivity;
 import com.autoxing.sdk.android.example.motion.PoitoActivity;
@@ -65,6 +66,14 @@ public class MotionActivity extends AppCompatActivity implements OnRobotListener
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MotionActivity.this, PoitoActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btn_charge = (Button)this.findViewById(R.id.btn_charge);
+        btn_charge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MotionActivity.this, GoHomeActivity.class);
                 startActivity(intent);
             }
         });

@@ -18,4 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="站点动作任务" />
+
+    <Button
+        android:id="@+id/btn_chargetask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="回桩充电任务（支持跨层）" />
 </LinearLayout>

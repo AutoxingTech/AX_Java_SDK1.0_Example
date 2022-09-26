@@ -1,4 +1,4 @@
-package com.autoxing.sdk.android.example.task;
+package com.autoxing.sdk.android.example.motion;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,21 +16,17 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.autoxing.robot.sdk.AXRobot;
-import com.autoxing.robot.sdk.OnTaskListener;
-import com.autoxing.robot.sdk.error.AXTaskException;
-import com.autoxing.robot.sdk.model.ActionInfo;
 import com.autoxing.robot.sdk.model.Pose;
-import com.autoxing.robot.sdk.model.TaskInfo;
-import com.autoxing.robot.sdk.model.TaskPoint;
+import com.autoxing.robot.sdk.model.RequestParam;
+import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.sdk.android.example.MyApplication;
 import com.autoxing.sdk.android.example.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
-public class PoiActionActivity extends AppCompatActivity implements OnTaskListener {
-    private final static String TAG = "PoiActionActivity";
+public class GoHomeActivity extends AppCompatActivity {
+    private final static String TAG = "GoHomeActivity";
 
     private AXRobot mAXRobot;
 
@@ -47,7 +43,12 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
         new Thread(new Runnable() {
             @Override
             public void run() {
-                JSONObject resObj = mAXRobot.getPoiList(null);
+                StateInfo stateInfo = mAXRobot.getState();
+                RequestParam requestParam = new RequestParam();
+                requestParam.areaId = stateInfo.areaId;
+                requestParam.robotId = stateInfo.robotId;
+                requestParam.type = 9;
+                JSONObject resObj = mAXRobot.getPoiList(requestParam);
                 if (resObj != null && resObj.containsKey("data")) {
                     JSONObject dataObj = resObj.getJSONObject("data");
                     int count = dataObj.getIntValue("count");
@@ -71,54 +72,22 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
     }
 
     private void showPoiLiseView() {
-        PoiAdapter adapter = new PoiAdapter(PoiActionActivity.this, R.layout.poi_list_item, poiLists);
+        PoiAdapter adapter = new PoiAdapter(GoHomeActivity.this, R.layout.poi_list_item, poiLists);
         ListView list_poi = (ListView)findViewById(R.id.list_poi);
         list_poi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                createTask(position);
-            }
-        });
-        list_poi.setAdapter(adapter);
-    }
-
-    private void createTask(final int position) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
                 JSONObject poiObj = poiLists.get(position);
                 JSONArray coordinate = poiObj.getJSONArray("coordinate");
-                String name = poiObj.getString("name");
-                String areaId = poiObj.getString("areaId");
-                int type = poiObj.getIntValue("type");
+                Log.e(TAG, poiObj.toJSONString());
                 float x = coordinate.getFloatValue(0);
                 float y = coordinate.getFloatValue(1);
                 float yaw = poiObj.getFloatValue("yaw");
                 Pose pose = new Pose(x, y, yaw);
-                TaskInfo task = new TaskInfo();
-                task.pts = new Vector<TaskPoint>();
-                TaskPoint taskPoint = new TaskPoint();
-                taskPoint.pose = pose;
-                taskPoint.type = type; // 若是充电桩类型，则自动前往并进行充电
-                taskPoint.areaId = areaId; // 区域ID，任务站点间、或和机器人当前不同区域时，会进行乘梯动作
-                taskPoint.ext = new JSONObject(); // 扩展信息，在任务状态订阅回调中SDK透传
-                taskPoint.ext.put("name", name);
-                taskPoint.ext.put("anyKey", "anyValue");
-                task.pts.add(taskPoint);
-                try {
-                    String taskId = mAXRobot.createTask(task);
-                    Log.e(TAG, "taskId=" + taskId);
-                    mAXRobot.executeTask(taskId);
-                } catch (AXTaskException e) {
-                    Log.e(TAG, e.getCode() + "," + e.getMessage());
-                }
+                mAXRobot.goHome(pose);
             }
-        }).start();
-    }
-
-    @Override
-    public void onTaskChanged(ActionInfo actionInfo) {
-        Log.e(TAG, actionInfo.actType + "," + actionInfo.data);
+        });
+        list_poi.setAdapter(adapter);
     }
 
     private class PoiAdapter extends ArrayAdapter<JSONObject> {
@@ -145,14 +114,12 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
     public void onResume() {
         Log.e(TAG, "---onResume---");
         super.onResume();
-        mAXRobot.subscribeTaskState(this); // 订阅任务状态时，最好进行全局订阅，避免任务状态丢失
     }
 
     @Override
     public void onPause() {
         Log.e(TAG, "---onPause---");
         super.onPause();
-        mAXRobot.subscribeTaskState(null);
     }
 
     @Override

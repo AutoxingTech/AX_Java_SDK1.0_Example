@@ -20,6 +20,8 @@ import com.autoxing.robot.sdk.OnTaskListener;
 import com.autoxing.robot.sdk.error.AXTaskException;
 import com.autoxing.robot.sdk.model.ActionInfo;
 import com.autoxing.robot.sdk.model.Pose;
+import com.autoxing.robot.sdk.model.RequestParam;
+import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.robot.sdk.model.TaskInfo;
 import com.autoxing.robot.sdk.model.TaskPoint;
 import com.autoxing.sdk.android.example.MyApplication;
@@ -29,8 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class PoiActionActivity extends AppCompatActivity implements OnTaskListener {
-    private final static String TAG = "PoiActionActivity";
+public class GoHomeTaskActivity extends AppCompatActivity implements OnTaskListener {
+    private final static String TAG = "GoHomeActivity";
 
     private AXRobot mAXRobot;
 
@@ -47,7 +49,12 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
         new Thread(new Runnable() {
             @Override
             public void run() {
-                JSONObject resObj = mAXRobot.getPoiList(null);
+                StateInfo stateInfo = mAXRobot.getState();
+                RequestParam requestParam = new RequestParam();
+                requestParam.areaId = stateInfo.areaId;
+                requestParam.robotId = stateInfo.robotId;
+                requestParam.type = 9;
+                JSONObject resObj = mAXRobot.getPoiList(requestParam);
                 if (resObj != null && resObj.containsKey("data")) {
                     JSONObject dataObj = resObj.getJSONObject("data");
                     int count = dataObj.getIntValue("count");
@@ -71,7 +78,7 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
     }
 
     private void showPoiLiseView() {
-        PoiAdapter adapter = new PoiAdapter(PoiActionActivity.this, R.layout.poi_list_item, poiLists);
+        PoiAdapter adapter = new PoiAdapter(GoHomeTaskActivity.this, R.layout.poi_list_item, poiLists);
         ListView list_poi = (ListView)findViewById(R.id.list_poi);
         list_poi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -88,9 +95,9 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
             public void run() {
                 JSONObject poiObj = poiLists.get(position);
                 JSONArray coordinate = poiObj.getJSONArray("coordinate");
+                int type = poiObj.getIntValue("type");
                 String name = poiObj.getString("name");
                 String areaId = poiObj.getString("areaId");
-                int type = poiObj.getIntValue("type");
                 float x = coordinate.getFloatValue(0);
                 float y = coordinate.getFloatValue(1);
                 float yaw = poiObj.getFloatValue("yaw");

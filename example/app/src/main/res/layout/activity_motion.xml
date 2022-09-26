@@ -36,4 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="站点定点运动" />
+
+    <Button
+        android:id="@+id/btn_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="回桩充电" />
 </LinearLayout>

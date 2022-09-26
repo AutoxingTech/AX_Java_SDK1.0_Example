@@ -100,7 +100,8 @@ public class PoitoActivity extends AppCompatActivity {
             JSONObject poiObj = getItem(position);
             View view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
             TextView text_poi = (TextView)view.findViewById(R.id.text_poi);
-            String name = poiObj.getString("name");
+            int floor = poiObj.getIntValue("floor");
+            String name = poiObj.getString("name") + "（" + floor + "层）";
             text_poi.setText(name);
             return view;
         }

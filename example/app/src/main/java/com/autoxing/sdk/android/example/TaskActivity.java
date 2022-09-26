@@ -12,6 +12,7 @@ import com.autoxing.robot.sdk.AXRobot;
 import com.autoxing.sdk.android.example.hardware.BoxdoorActivity;
 import com.autoxing.sdk.android.example.hardware.LightbeltActivity;
 import com.autoxing.sdk.android.example.hardware.SprayerActivity;
+import com.autoxing.sdk.android.example.task.GoHomeTaskActivity;
 import com.autoxing.sdk.android.example.task.PoiActionActivity;
 
 public class TaskActivity extends AppCompatActivity {
@@ -34,6 +35,14 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TaskActivity.this, PoiActionActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btn_chargetask = (Button)this.findViewById(R.id.btn_chargetask);
+        btn_chargetask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TaskActivity.this, GoHomeTaskActivity.class);
                 startActivity(intent);
             }
         });

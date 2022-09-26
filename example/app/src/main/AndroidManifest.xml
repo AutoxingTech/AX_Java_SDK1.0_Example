@@ -43,6 +43,11 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name=".motion.GoHomeActivity" android:label="回桩充电">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HardwareActivity" android:label="机器人硬件控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,6 +74,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".task.PoiActionActivity" android:label="站点动作任务">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".task.GoHomeTaskActivity" android:label="回桩充电任务（支持跨层）">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

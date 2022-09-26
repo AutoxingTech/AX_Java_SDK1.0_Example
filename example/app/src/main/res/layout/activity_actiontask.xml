@@ -7,27 +7,34 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="" />
+        android:gravity="left"
+        android:text="选择动作站点" />
+    <ListView
+        android:id="@+id/list_poi"
+        android:layout_width="match_parent"
+        android:layout_weight="0.6"
+        android:layout_height="0dp">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="选择充电桩" />
+    <ListView
+        android:id="@+id/list_chargepoi"
+        android:layout_width="match_parent"
+        android:layout_weight="0.4"
+        android:layout_height="0dp">
+    </ListView>
+
 
     <Button
-        android:id="@+id/btn_poiaction"
+        android:id="@+id/btn_starttask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="站点动作任务" />
+        android:text="开始任务" />
 
-    <Button
-        android:id="@+id/btn_chargetask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="回桩充电任务（支持跨层）" />
-
-    <Button
-        android:id="@+id/btn_actiontask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="播放声音、暂停、回充任务" />
 </LinearLayout>

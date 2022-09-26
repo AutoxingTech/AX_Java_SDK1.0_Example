@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
 
     private TextView text_result;
     private TextView text_state;
+    private Button btn_motion;
+    private Button btn_hardware;
+    private Button btn_task;
 
     private Handler mHandler = new Handler();
 
@@ -45,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
             }
         });
 
-        Button btn_motion = (Button)this.findViewById(R.id.btn_motion);
+        btn_motion = (Button)this.findViewById(R.id.btn_motion);
+        btn_motion.setEnabled(false);
         btn_motion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
             }
         });
 
-        Button btn_hardware = (Button)this.findViewById(R.id.btn_hardware);
+        btn_hardware = (Button)this.findViewById(R.id.btn_hardware);
+        btn_hardware.setEnabled(false);
         btn_hardware.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
             }
         });
 
-        Button btn_task = (Button)this.findViewById(R.id.btn_task);
+        btn_task = (Button)this.findViewById(R.id.btn_task);
+        btn_task.setEnabled(false);
         btn_task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +90,14 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
                     Log.e(TAG, "isOk="+isOk);
                     if (isOk) {
                         setResultText("Connection succeeded. RobotId: " + mAXRobot.getRobotId());
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                btn_motion.setEnabled(true);
+                                btn_hardware.setEnabled(true);
+                                btn_task.setEnabled(true);
+                            }
+                        });
                     }
                 } catch (AXInitException e) {
                     Log.e(TAG, "code="+e.getCode()+",message="+e.getMessage());

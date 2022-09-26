@@ -166,6 +166,7 @@ public class ActionTaskActivity extends AppCompatActivity implements OnTaskListe
                 JSONObject playAudioData = new JSONObject();
                 playAudioData.put("url", "https://autoxingtest1.oss-cn-beijing.aliyuncs.com/mp3/autoxing/yijia_task_running.mp3"); // 播放在线声音
                 playAudioData.put("num", 2); // 播放两次
+                playAudioData.put("volume", 30); // 音量0-100
                 playAudioData.put("duration", 999999); // 播放总时长，同时存在num和duration时，以num执行完毕及结束该action
                 playAudioData.put("interval", 10); // 间隔10秒播放
                 ActionInfo playAudioAct = new ActionInfo(ActionType.PlayAudio, playAudioData); // 创建播放声音动作

@@ -16,6 +16,7 @@ import com.autoxing.robot.sdk.error.AXConnectException;
 import com.autoxing.robot.sdk.error.AXInitException;
 import com.autoxing.robot.sdk.model.ConnectInfo;
 import com.autoxing.robot.sdk.model.StateInfo;
+import com.autoxing.robot.sdk.model.SerialType;
 
 public class MainActivity extends AppCompatActivity implements OnRobotListener {
     private final static String TAG = "MainActivity";
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
             @Override
             public void run() {
                 try {
+                    //1.0.3版本新增 设置串口连接类型,不设置则SDK根据sn码动态设置
+                    mAXRobot.setSerialType(SerialType.ANDROID);
                     mAXRobot.init();
                     ConnectInfo info = new ConnectInfo(mRobotId, 20, "");
                     boolean isOk = mAXRobot.connectRobot(info);

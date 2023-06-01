@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
     @Override
     public void onStateChanged(StateInfo stateInfo) {
         Log.e(TAG, stateInfo.toString());
-        StringBuffer sb = new StringBuffer();
+        final StringBuffer sb = new StringBuffer();
         sb.append("手动：");
         if (stateInfo.isManualMode)
             sb.append("是");
@@ -172,7 +172,12 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
         sb.append("，速度：" + stateInfo.speed + "m/s");
         sb.append("，定位评价："+stateInfo.locQuality);
         sb.append("，当前位置：[x:"+stateInfo.x+",y:"+stateInfo.y+",yaw:"+stateInfo.yaw+"]");
-        text_state.setText(sb.toString());
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                text_state.setText(sb.toString());
+            }
+        });
     }
 
     @Override

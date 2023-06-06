@@ -16,7 +16,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        mAXRobot = new AXRobot(appId, appSecret, AppMode.WAN_APP);
+        mAXRobot = new AXRobot(appId, appSecret, AppMode.WAN_APP,"https://local.autoxing.com");
     }
 
     public AXRobot getAXRobot() {

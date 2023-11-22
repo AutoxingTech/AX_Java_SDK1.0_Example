@@ -1,12 +1,0 @@
-
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦äÏ±ûÿÿÿÿ8Ü©¤¶0
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äêñä8Ü©¤¶0
-msquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¯ˆ
-8Ü©¤¶0
-rsquid:UselessImportCheck"DRemove this unused import 'com.autoxing.robot.sdk.model.MotionType'.(·¯Ì®ûÿÿÿÿ8Ü©¤¶0
-ssquid:S1450"WRemove the "mAXRobot" field and declare it as a local variable in the relevant methods.(·—¿Ø8Ü©¤¶0
-vsquid:S1450"ZRemove the "text_result" field and declare it as a local variable in the relevant methods.(­İÄê8Ü©¤¶0
-ssquid:S00116"VRename this field "text_result" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­İÄê8Ü©¤¶0
-tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(½áŞ¾ÿÿÿÿÿ8Ü©¤¶0
-Hsquid:S1068",Remove this unused "mAXRobot" private field.(·—¿Ø8Ü©¤¶0
-Ksquid:S1068"/Remove this unused "text_result" private field.(­İÄê8Ü©¤¶0

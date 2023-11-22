@@ -14,6 +14,7 @@ import com.autoxing.robot.sdk.AXRobot;
 import com.autoxing.robot.sdk.OnRobotListener;
 import com.autoxing.robot.sdk.error.AXConnectException;
 import com.autoxing.robot.sdk.error.AXInitException;
+import com.autoxing.robot.sdk.model.ConfigInfo;
 import com.autoxing.robot.sdk.model.ConnectInfo;
 import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.robot.sdk.model.SerialType;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
     private Button btn_motion;
     private Button btn_hardware;
     private Button btn_task;
+    private Button btn_update_config;
 
     private Handler mHandler = new Handler();
 
@@ -78,6 +80,27 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
                 startActivity(intent);
             }
         });
+
+        btn_update_config = (Button)this.findViewById(R.id.btn_update_config);
+        btn_update_config.setEnabled(false);
+        btn_update_config.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               new Thread(new Runnable() {
+                   @Override
+                   public void run() {
+                       ConfigInfo configInfo = new ConfigInfo();
+                       configInfo.language = 1;//播报语音，默认为中文
+                       configInfo.runMode = 1;//自动回桩任务行驶模式，默认为灵活避障
+                       configInfo.skipPtDelay = 60;//设定触发1008卡住自动回桩的时间,单位:秒，默认为60s
+                       configInfo.lowBattery = 15;//空闲状态下低电回桩最低电量值，默认为15%
+                       configInfo.forceBattery = 10;//任务中低电回桩最低电量值，默认为10%
+                       boolean success = mAXRobot.updateConfigInfo(configInfo);
+                       Log.e(TAG, "updateConfigInfo="+success);
+                   }
+               }).start();
+            }
+        });
     }
 
     private void connectRobot() {
@@ -99,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
                                 btn_motion.setEnabled(true);
                                 btn_hardware.setEnabled(true);
                                 btn_task.setEnabled(true);
+                                btn_update_config.setEnabled(true);
                             }
                         });
                     }

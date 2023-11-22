@@ -20,72 +20,72 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MotionActivity" android:label="机器人运动控制">
+        <activity android:name=".MotionActivity" android:parentActivityName=".MainActivity" android:label="机器人运动控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".motion.MotionModeActivity" android:label="运动模式">
+        <activity android:name=".motion.MotionModeActivity" android:parentActivityName=".MotionActivity" android:label="运动模式">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".motion.StepActivity" android:label="单步运动">
+        <activity android:name=".motion.StepActivity" android:parentActivityName=".MotionActivity" android:label="单步运动">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".motion.MaptoActivity" android:label="位置定点运动">
+        <activity android:name=".motion.MaptoActivity" android:parentActivityName=".MotionActivity" android:label="位置定点运动">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".motion.PoitoActivity" android:label="站点定点运动">
+        <activity android:name=".motion.PoitoActivity" android:parentActivityName=".MotionActivity" android:label="站点定点运动">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".motion.GoHomeActivity" android:label="回桩充电">
+        <activity android:name=".motion.GoHomeActivity" android:parentActivityName=".MotionActivity" android:label="回桩充电">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".HardwareActivity" android:label="机器人硬件控制">
+        <activity android:name=".HardwareActivity" android:parentActivityName=".MainActivity" android:label="机器人硬件控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".hardware.LightbeltActivity" android:label="灯带控制">
+        <activity android:name=".hardware.LightbeltActivity" android:parentActivityName=".HardwareActivity" android:label="灯带控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".hardware.BoxdoorActivity" android:label="箱门控制">
+        <activity android:name=".hardware.BoxdoorActivity" android:parentActivityName=".HardwareActivity" android:label="箱门控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".hardware.SprayerActivity" android:label="喷雾器控制">
+        <activity android:name=".hardware.SprayerActivity" android:parentActivityName=".HardwareActivity" android:label="喷雾器控制">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".TaskActivity" android:label="动作任务">
+        <activity android:name=".TaskActivity" android:parentActivityName=".MainActivity" android:label="动作任务">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".task.PoiActionActivity" android:label="站点动作任务">
+        <activity android:name=".task.PoiActionActivity" android:parentActivityName=".TaskActivity" android:label="站点动作任务">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".task.GoHomeTaskActivity" android:label="回桩充电任务（支持跨层）">
+        <activity android:name=".task.GoHomeTaskActivity" android:parentActivityName=".TaskActivity" android:label="回桩充电任务（支持跨层）">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".task.ActionTaskActivity" android:label="播放声音、暂停、回充任务">
+        <activity android:name=".task.ActionTaskActivity" android:parentActivityName=".TaskActivity" android:label="播放声音、暂停、回充任务">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

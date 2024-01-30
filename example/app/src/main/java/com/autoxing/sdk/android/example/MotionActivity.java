@@ -18,6 +18,7 @@ import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.sdk.android.example.hardware.LightbeltActivity;
 import com.autoxing.sdk.android.example.motion.GoHomeActivity;
 import com.autoxing.sdk.android.example.motion.MaptoActivity;
+import com.autoxing.sdk.android.example.motion.MaptoShelfActivity;
 import com.autoxing.sdk.android.example.motion.MotionModeActivity;
 import com.autoxing.sdk.android.example.motion.PoitoActivity;
 import com.autoxing.sdk.android.example.motion.StepActivity;
@@ -77,6 +78,15 @@ public class MotionActivity extends AppCompatActivity implements OnRobotListener
                 startActivity(intent);
             }
         });
+        Button btn_maptoShelf = (Button)this.findViewById(R.id.btn_maptoShelf);
+        btn_maptoShelf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MotionActivity.this, MaptoShelfActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

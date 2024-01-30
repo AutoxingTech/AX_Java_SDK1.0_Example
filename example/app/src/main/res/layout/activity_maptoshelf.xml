@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="x：" />
+        <EditText
+            android:id="@+id/et_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-0.378"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="y：" />
+        <EditText
+            android:id="@+id/et_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.587"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="yaw：" />
+        <EditText
+            android:id="@+id/et_yaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88"/>
+        <Switch
+            android:id="@+id/s_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取货"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:id="@+id/btn_goto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="前往"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="x：" />
+        <EditText
+            android:id="@+id/et_x_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-0.409"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="y：" />
+        <EditText
+            android:id="@+id/et_y_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.053"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="yaw：" />
+        <EditText
+            android:id="@+id/et_yaw_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="269"/>
+        <Switch
+            android:id="@+id/s_type_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取货"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:id="@+id/btn_goto_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="前往"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请确保输入的位置，机器人能正常到达" />
+
+    <Button
+        android:id="@+id/btn_pickup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取货" />
+    <Button
+        android:id="@+id/btn_pickdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="放货" />
+</LinearLayout>

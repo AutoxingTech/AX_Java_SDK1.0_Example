@@ -13,7 +13,14 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale|keyboard"
+            android:launchMode="singleTop"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,6 +43,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".motion.MaptoActivity" android:parentActivityName=".MotionActivity" android:label="位置定点运动">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".motion.MaptoShelfActivity" android:parentActivityName=".MotionActivity" android:label="货架位置定点运动">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

@@ -1,10 +1,9 @@
 package com.autoxing.sdk.android.example;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +11,17 @@ import android.widget.TextView;
 
 import com.autoxing.robot.sdk.AXRobot;
 import com.autoxing.robot.sdk.OnRobotListener;
+import com.autoxing.robot.sdk.OnTaskListener;
 import com.autoxing.robot.sdk.error.AXConnectException;
 import com.autoxing.robot.sdk.error.AXInitException;
+import com.autoxing.robot.sdk.model.ActionInfo;
 import com.autoxing.robot.sdk.model.ConfigInfo;
 import com.autoxing.robot.sdk.model.ConnectInfo;
-import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.robot.sdk.model.SerialType;
+import com.autoxing.robot.sdk.model.StateInfo;
 
-public class MainActivity extends AppCompatActivity implements OnRobotListener {
+
+public class MainActivity extends AppCompatActivity implements OnRobotListener, OnTaskListener {
     private final static String TAG = "MainActivity";
 
     private AXRobot mAXRobot;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
 
     private TextView text_result;
     private TextView text_state;
+    private TextView text_task_state;
     private Button btn_motion;
     private Button btn_hardware;
     private Button btn_task;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
 
         text_result = (TextView)this.findViewById(R.id.text_result);
         text_state = (TextView)this.findViewById(R.id.text_state);
+        text_task_state = (TextView)this.findViewById(R.id.text_task_state);
         Button btn_connect = (Button)this.findViewById(R.id.btn_connect);
         btn_connect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
                     boolean isOk = mAXRobot.connectRobot(info);
                     Log.e(TAG, "isOk="+isOk);
                     if (isOk) {
+                        mAXRobot.subscribeRealState(MainActivity.this);
+                        mAXRobot.subscribeTaskState(MainActivity.this);
                         setResultText("Connection succeeded. RobotId: " + mAXRobot.getRobotId());
                         mHandler.post(new Runnable() {
                             @Override
@@ -194,6 +200,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
             sb.append("否");
         sb.append("，电量：" + stateInfo.battery + "%");
         sb.append("，速度：" + stateInfo.speed + "m/s");
+        sb.append("，里程：" + stateInfo.mileage + "m");
+        sb.append("，时长：" + stateInfo.duration + "s");
         sb.append("，定位评价："+stateInfo.locQuality);
         sb.append("，当前位置：[x:"+stateInfo.x+",y:"+stateInfo.y+",yaw:"+stateInfo.yaw+"]");
         runOnUiThread(new Runnable() {
@@ -205,17 +213,26 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener {
     }
 
     @Override
+    public void onTaskChanged(final ActionInfo info) {
+        Log.e(TAG, info.toString());
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                text_task_state.setText(info.toString());
+            }
+        });
+    }
+
+    @Override
     public void onResume() {
         Log.e(TAG, "---onResume---");
         super.onResume();
-        mAXRobot.subscribeRealState(this);
     }
 
     @Override
     public void onPause() {
         Log.e(TAG, "---onPause---");
         super.onPause();
-        mAXRobot.subscribeRealState(null);
     }
 
     @Override

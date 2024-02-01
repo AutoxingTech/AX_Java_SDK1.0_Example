@@ -20,17 +20,17 @@
         android:text="连接机器人" />
 
     <TextView
-        android:id="@+id/text_state"
+        android:id="@+id/text_task_state"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:scrollHorizontally="false"
         android:ellipsize="none"
         android:text="" />
 
     <TextView
-        android:id="@+id/text_task_state"
+        android:id="@+id/text_state"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:scrollHorizontally="false"
         android:ellipsize="none"
         android:text="" />

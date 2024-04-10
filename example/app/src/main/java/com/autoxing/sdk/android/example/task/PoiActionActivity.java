@@ -19,7 +19,9 @@ import com.autoxing.robot.sdk.AXRobot;
 import com.autoxing.robot.sdk.OnTaskListener;
 import com.autoxing.robot.sdk.error.AXTaskException;
 import com.autoxing.robot.sdk.model.ActionInfo;
+import com.autoxing.robot.sdk.model.MotionType;
 import com.autoxing.robot.sdk.model.Pose;
+import com.autoxing.robot.sdk.model.StateInfo;
 import com.autoxing.robot.sdk.model.TaskInfo;
 import com.autoxing.robot.sdk.model.TaskPoint;
 import com.autoxing.sdk.android.example.MyApplication;
@@ -108,6 +110,11 @@ public class PoiActionActivity extends AppCompatActivity implements OnTaskListen
                 try {
                     String taskId = mAXRobot.createTask(task);
                     Log.e(TAG, "taskId=" + taskId);
+
+                    StateInfo state = mAXRobot.getState();
+                    if(state != null && (state.isManualMode || state.isRemoteMode)){
+                        mAXRobot.motionFor(MotionType.Auto);
+                    }
                     mAXRobot.executeTask(taskId);
                 } catch (AXTaskException e) {
                     Log.e(TAG, e.getCode() + "," + e.getMessage());

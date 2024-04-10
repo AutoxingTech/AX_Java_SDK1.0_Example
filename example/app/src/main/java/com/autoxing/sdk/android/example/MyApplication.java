@@ -16,6 +16,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        AXRobot.setDebugMode(true);
         mAXRobot = new AXRobot(appId, appSecret, AppMode.LOCAL_APP);
     }
 

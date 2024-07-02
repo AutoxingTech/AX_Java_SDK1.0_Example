@@ -198,7 +198,9 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/autoxing/robot/sdk/model/StateInfo.html#jackProgress">jackProgress</a></span></code>
-<div class="block">顶升进度，取值范围[0,1],1:顶升完成 0:未顶升</div>
+<div class="block">顶升进度，取值范围[0,1]<br/>
+ 1:顶升完成 <br/>
+ 0:未顶升</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -216,12 +218,12 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/autoxing/robot/sdk/model/StateInfo.html#moveState">moveState</a></span></code>
-<div class="block">机器人当前运动状态
- idle - 空闲
- moving - 正在移动
- succeeded - 移动完成
- cancelled - 移动被取消
- failed - 移动失败</div>
+<div class="block">机器人当前运动状态<br/>
+ idle - 空闲<br/>
+ moving - 正在移动<br/>
+ succeeded - 移动完成<br/>
+ cancelled - 移动被取消<br/>
+ failed - 移动失败<br/></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -231,9 +233,30 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/autoxing/robot/sdk/model/StateInfo.html#robotSignal">robotSignal</a></span></code>
+<div class="block">信号状态<br/>
+ none 无状态<br/>
+ turn_left 左转<br/>
+ turn_right 右转<br/>
+ brake 刹车<br/>
+ reverse 倒车</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/autoxing/robot/sdk/model/StateInfo.html#speed">speed</a></span></code>
 <div class="block">机器人速度</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/autoxing/robot/sdk/model/StateInfo.html#stuckState">stuckState</a></span></code>
+<div class="block">机器人卡住状态<br/>
+ none 无状态<br/>
+ move_stucked 移动卡住<br/>
+ target_spin_stucked 旋转卡住<br/>
+ viewport_blocked 视觉发现障碍物,灵活行驶可能绕开,严格轨道可能卡住</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -501,12 +524,49 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>moveState</h4>
 <pre>public&nbsp;java.lang.String moveState</pre>
-<div class="block">机器人当前运动状态
- idle - 空闲
- moving - 正在移动
- succeeded - 移动完成
- cancelled - 移动被取消
- failed - 移动失败</div>
+<div class="block">机器人当前运动状态<br/>
+ idle - 空闲<br/>
+ moving - 正在移动<br/>
+ succeeded - 移动完成<br/>
+ cancelled - 移动被取消<br/>
+ failed - 移动失败<br/></div>
+</li>
+</ul>
+<a name="stuckState">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stuckState</h4>
+<pre>public&nbsp;java.lang.String stuckState</pre>
+<div class="block">机器人卡住状态<br/>
+ none 无状态<br/>
+ move_stucked 移动卡住<br/>
+ target_spin_stucked 旋转卡住<br/>
+ viewport_blocked 视觉发现障碍物,灵活行驶可能绕开,严格轨道可能卡住</div>
+<dl>
+<dt><span class="simpleTagLabel">从以下版本开始:</span></dt>
+<dd>1.0.17</dd>
+</dl>
+</li>
+</ul>
+<a name="robotSignal">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>robotSignal</h4>
+<pre>public&nbsp;java.lang.String robotSignal</pre>
+<div class="block">信号状态<br/>
+ none 无状态<br/>
+ turn_left 左转<br/>
+ turn_right 右转<br/>
+ brake 刹车<br/>
+ reverse 倒车</div>
+<dl>
+<dt><span class="simpleTagLabel">从以下版本开始:</span></dt>
+<dd>1.0.17</dd>
+</dl>
 </li>
 </ul>
 <a name="duration">
@@ -562,7 +622,9 @@ public&nbsp;double mileage</pre>
 <li class="blockList">
 <h4>jackProgress</h4>
 <pre>public&nbsp;double jackProgress</pre>
-<div class="block">顶升进度，取值范围[0,1],1:顶升完成 0:未顶升</div>
+<div class="block">顶升进度，取值范围[0,1]<br/>
+ 1:顶升完成 <br/>
+ 0:未顶升</div>
 <dl>
 <dt><span class="simpleTagLabel">从以下版本开始:</span></dt>
 <dd>1.0.16</dd>

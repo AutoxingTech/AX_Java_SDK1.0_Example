@@ -506,7 +506,9 @@
 <dl>
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/StateInfo.html#jackProgress">jackProgress</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/StateInfo.html" title="com.autoxing.robot.sdk.model中的类">StateInfo</a></dt>
 <dd>
-<div class="block">顶升进度，取值范围[0,1],1:顶升完成 0:未顶升</div>
+<div class="block">顶升进度，取值范围[0,1]<br/>
+ 1:顶升完成 <br/>
+ 0:未顶升</div>
 </dd>
 <dt><a href="com/autoxing/robot/sdk/model/JackType.html" title="com.autoxing.robot.sdk.model中的枚举"><span class="typeNameLink">JackType</span></a> - <a href="com/autoxing/robot/sdk/model/package-summary.html">com.autoxing.robot.sdk.model</a>中的枚举</dt>
 <dd>
@@ -587,12 +589,12 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/StateInfo.html#moveState">moveState</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/StateInfo.html" title="com.autoxing.robot.sdk.model中的类">StateInfo</a></dt>
 <dd>
-<div class="block">机器人当前运动状态
- idle - 空闲
- moving - 正在移动
- succeeded - 移动完成
- cancelled - 移动被取消
- failed - 移动失败</div>
+<div class="block">机器人当前运动状态<br/>
+ idle - 空闲<br/>
+ moving - 正在移动<br/>
+ succeeded - 移动完成<br/>
+ cancelled - 移动被取消<br/>
+ failed - 移动失败<br/></div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/AXRobot.html#moveTo-com.autoxing.robot.sdk.model.Pose-">moveTo(Pose)</a></span> - 类 中的方法com.autoxing.robot.sdk.<a href="com/autoxing/robot/sdk/AXRobot.html" title="com.autoxing.robot.sdk中的类">AXRobot</a></dt>
 <dd>
@@ -756,6 +758,15 @@
 <dd>
 <div class="block">任务执行的机器人ID</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/StateInfo.html#robotSignal">robotSignal</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/StateInfo.html" title="com.autoxing.robot.sdk.model中的类">StateInfo</a></dt>
+<dd>
+<div class="block">信号状态<br/>
+ none 无状态<br/>
+ turn_left 左转<br/>
+ turn_right 右转<br/>
+ brake 刹车<br/>
+ reverse 倒车</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/TaskInfo.html#routeMode">routeMode</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/TaskInfo.html" title="com.autoxing.robot.sdk.model中的类">TaskInfo</a></dt>
 <dd>
 <div class="block">算路模式，默认为1<br/>
@@ -890,6 +901,14 @@
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/TaskPoint.html#stopRadius">stopRadius</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/TaskPoint.html" title="com.autoxing.robot.sdk.model中的类">TaskPoint</a></dt>
 <dd>
 <div class="block">停靠半径,单位:米，默认为1</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/model/StateInfo.html#stuckState">stuckState</a></span> - 类 中的变量com.autoxing.robot.sdk.model.<a href="com/autoxing/robot/sdk/model/StateInfo.html" title="com.autoxing.robot.sdk.model中的类">StateInfo</a></dt>
+<dd>
+<div class="block">机器人卡住状态<br/>
+ none 无状态<br/>
+ move_stucked 移动卡住<br/>
+ target_spin_stucked 旋转卡住<br/>
+ viewport_blocked 视觉发现障碍物,灵活行驶可能绕开,严格轨道可能卡住</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/autoxing/robot/sdk/AXRobot.html#subscribeRealState-com.autoxing.robot.sdk.OnRobotListener-">subscribeRealState(OnRobotListener)</a></span> - 类 中的方法com.autoxing.robot.sdk.<a href="com/autoxing/robot/sdk/AXRobot.html" title="com.autoxing.robot.sdk中的类">AXRobot</a></dt>
 <dd>

@@ -202,6 +202,9 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener, 
         sb.append("，速度：" + stateInfo.speed + "m/s");
         sb.append("，顶升状态：" + stateInfo.jackProgress);
         sb.append("，定位评价："+stateInfo.locQuality);
+        sb.append("，运动状态：" + stateInfo.moveState);
+        sb.append("，卡住状态：" + stateInfo.stuckState);
+        sb.append("，信号状态：" + stateInfo.robotSignal);
         sb.append("，当前位置：[x:"+stateInfo.x+",y:"+stateInfo.y+",yaw:"+stateInfo.yaw+"]");
         sb.append("，taskObj："+stateInfo.taskObj);
         runOnUiThread(new Runnable() {

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.autoxing.robot.sdk.AXRobot;
 import com.autoxing.robot.sdk.OnRobotListener;
 import com.autoxing.robot.sdk.OnTaskListener;
@@ -17,6 +19,10 @@ import com.autoxing.robot.sdk.error.AXInitException;
 import com.autoxing.robot.sdk.model.ActionInfo;
 import com.autoxing.robot.sdk.model.ConfigInfo;
 import com.autoxing.robot.sdk.model.ConnectInfo;
+import com.autoxing.robot.sdk.model.MapPose;
+import com.autoxing.robot.sdk.model.PoiType;
+import com.autoxing.robot.sdk.model.Pose;
+import com.autoxing.robot.sdk.model.RequestParam;
 import com.autoxing.robot.sdk.model.SerialType;
 import com.autoxing.robot.sdk.model.StateInfo;
 
@@ -34,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener, 
     private Button btn_hardware;
     private Button btn_task;
     private Button btn_update_config;
+    private Button btn_robot_reset;
+    private Button btn_charging_reset;
 
     private Handler mHandler = new Handler();
 
@@ -93,18 +101,103 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener, 
                new Thread(new Runnable() {
                    @Override
                    public void run() {
-                       ConfigInfo configInfo = new ConfigInfo();
-                       configInfo.language = 1;//播报语音，默认为中文
-                       configInfo.runMode = 1;//自动回桩任务行驶模式，默认为灵活避障
-                       configInfo.skipPtDelay = 60;//设定触发1008卡住自动回桩的时间,单位:秒，默认为60s
-                       configInfo.lowBattery = 15;//空闲状态下低电回桩最低电量值，默认为15%
-                       configInfo.forceBattery = 10;//任务中低电回桩最低电量值，默认为10%
-                       boolean success = mAXRobot.updateConfigInfo(configInfo);
-                       Log.e(TAG, "updateConfigInfo="+success);
+                       updateConfig();
                    }
                }).start();
             }
         });
+        btn_robot_reset = (Button)this.findViewById(R.id.btn_robot_reset);
+        btn_robot_reset.setEnabled(false);
+        btn_robot_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String newAreaId = "";
+                        boolean success = resetMapByRobotPose(newAreaId);
+                        Log.e(TAG, "resetPose=" + success);
+                    }
+                }).start();
+            }
+        });
+
+        btn_charging_reset = (Button)this.findViewById(R.id.btn_charging_reset);
+        btn_charging_reset.setEnabled(false);
+        btn_charging_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String chargingNmae = "";
+                        JSONObject poiObj = queryChargingByName(chargingNmae);
+                        if(poiObj != null){
+                            JSONArray coordinate = poiObj.getJSONArray("coordinate");
+                            String areaId = poiObj.getString("areaId");
+                            float x = coordinate.getFloatValue(0);
+                            float y = coordinate.getFloatValue(1);
+                            float yaw = poiObj.getFloatValue("yaw");
+                            //使用充电桩复位
+                            boolean success = resetMapByCharging(areaId,x,y,yaw);
+                            Log.e(TAG, "resetPose=" + success);
+                        }
+                        }
+                }).start();
+            }
+        });
+    }
+
+    private JSONObject queryChargingByName(String chargingName) {
+        //查询充电桩点位数据
+        RequestParam requestParam = new RequestParam();
+        requestParam.type = PoiType.Charging.getType();
+        JSONObject resObj = mAXRobot.getPoiList(requestParam);
+        if (resObj == null || !resObj.containsKey("data")) {
+            return null;
+        }
+        JSONObject dataObj = resObj.getJSONObject("data");
+        int count = dataObj.getIntValue("count");
+        if (count == 0){
+            return null;
+        }
+        for (int i = 0; i < count; i++) {
+            JSONObject poiObj = dataObj.getJSONArray("list").getJSONObject(i);
+            String name = poiObj.getString("name");
+            if (chargingName.equals(name)) {
+                return poiObj;
+            }
+        }
+        return null;
+    }
+
+    private boolean resetMapByCharging(String areaId,float x,float y,float yaw){
+        MapPose mapPose = new MapPose();
+        mapPose.areaId = areaId;
+        mapPose.pose = new Pose(x,y,yaw);
+        return mAXRobot.resetPose(mapPose, true);
+    }
+
+    private boolean resetMapByRobotPose(String newAreaId){
+        StateInfo state = mAXRobot.getState();
+        if(state == null){
+            return false;
+        }
+        MapPose mapPose = new MapPose();
+        mapPose.areaId = newAreaId;
+        mapPose.pose = new Pose(state.x,state.y,state.ori);
+        return mAXRobot.resetPose(mapPose, false);
+    }
+
+    private void updateConfig() {
+        ConfigInfo configInfo = new ConfigInfo();
+        configInfo.language = 1;//播报语音，默认为中文
+        configInfo.runMode = 1;//自动回桩任务行驶模式，默认为灵活避障
+        configInfo.skipPtDelay = 60;//设定触发1008卡住自动回桩的时间,单位:秒，默认为60s
+        configInfo.lowBattery = 15;//空闲状态下低电回桩最低电量值，默认为15%
+        configInfo.forceBattery = 10;//任务中低电回桩最低电量值，默认为10%
+        boolean success = mAXRobot.updateConfigInfo(configInfo);
+        Log.e(TAG, "updateConfigInfo=" + success);
     }
 
     private void connectRobot() {
@@ -129,6 +222,8 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener, 
                                 btn_hardware.setEnabled(true);
                                 btn_task.setEnabled(true);
                                 btn_update_config.setEnabled(true);
+                                btn_robot_reset.setEnabled(true);
+                                btn_charging_reset.setEnabled(true);
                             }
                         });
                     }
@@ -205,7 +300,7 @@ public class MainActivity extends AppCompatActivity implements OnRobotListener, 
         sb.append("，运动状态：" + stateInfo.moveState);
         sb.append("，卡住状态：" + stateInfo.stuckState);
         sb.append("，信号状态：" + stateInfo.robotSignal);
-        sb.append("，当前位置：[x:"+stateInfo.x+",y:"+stateInfo.y+",yaw:"+stateInfo.yaw+"]");
+        sb.append("，当前位置：[x:"+stateInfo.x+",y:"+stateInfo.y+",yaw(弧度):"+stateInfo.yaw+",ori(角度):"+stateInfo.ori+"]");
         sb.append("，taskObj："+stateInfo.taskObj);
         runOnUiThread(new Runnable() {
             @Override

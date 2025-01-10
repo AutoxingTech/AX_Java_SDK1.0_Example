@@ -30,4 +30,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="播放声音、暂停、回充任务" />
+
+    <Button
+        android:id="@+id/btn_jacktask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="顶升任务" />
 </LinearLayout>

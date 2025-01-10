@@ -14,6 +14,7 @@ import com.autoxing.sdk.android.example.hardware.LightbeltActivity;
 import com.autoxing.sdk.android.example.hardware.SprayerActivity;
 import com.autoxing.sdk.android.example.task.ActionTaskActivity;
 import com.autoxing.sdk.android.example.task.GoHomeTaskActivity;
+import com.autoxing.sdk.android.example.task.JackTaskActivity;
 import com.autoxing.sdk.android.example.task.PoiActionActivity;
 
 public class TaskActivity extends AppCompatActivity {
@@ -52,6 +53,14 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TaskActivity.this, ActionTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btn_jacktask = (Button)this.findViewById(R.id.btn_jacktask);
+        btn_jacktask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TaskActivity.this, JackTaskActivity.class);
                 startActivity(intent);
             }
         });
